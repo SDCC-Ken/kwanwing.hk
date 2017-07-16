@@ -1,32 +1,29 @@
 <template>
-  <v-app>
-		<v-navigation-drawer v-model="drawer" right  permanent floating light>
-			<v-list>
-        <v-list-item v-for="menu in menus" :key="menu">
-          <v-list-tile router :to="menu.url">
-            <v-list-tile-content>
-              <v-list-tile-title>{{menu.title}}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list-item>
-      </v-list>
+	<v-app standalone>
+		<v-navigation-drawer persistent absolute height="100%" clipped enable-resize-watcher v-model="drawer" right>
+			<v-list dense>
+				<v-list-tile v-for="menu in menus" :key="menu.title" :to="menu.url">
+					<v-list-tile-action>
+						<v-icon>{{menu.icon}}</v-icon>
+					</v-list-tile-action>
+					<v-list-tile-content>
+						<v-list-tile-title>{{menu.title}}</v-list-tile-title>
+					</v-list-tile-content>
+				</v-list-tile>
+			</v-list>
 		</v-navigation-drawer>
-		<v-toolbar class="transparent elevation-0 toolbar primary">
-			<v-toolbar-title class="special display-3">Kwan Wing's Profile</v-toolbar-title>
-			<v-spacer></v-spacer>
-      <v-toolbar-side-icon class="hidden-md-and-up" @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
-		</v-toolbar>
-		<div class="main">
-			<v-layout row wrap>
-				<v-container fluid>
-					<v-flex xs8 offset-xs2>
-						<router-view></router-view>
-					</v-flex>
-				</v-container>
-			</v-layout>
-		</div>
-    <v-footer fixed>
-      <span>©copyright 2017 Created By Chan Kwan Wing</span>
+    <main>
+			<v-toolbar class="primary">
+	      <v-toolbar-title class="special white--text">Kwan Wing's Profile</v-toolbar-title>
+	      <v-spacer></v-spacer>
+	      <v-toolbar-side-icon @click.native.stop="drawer = !drawer" class="white--text hidden-md-and-up"></v-toolbar-side-icon>
+	    </v-toolbar>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </main>
+    <v-footer class="primary">
+      <span class="white--text">© copyright 2015 - {{year}} Created By Chan Kwan Wing</span>
     </v-footer>
   </v-app>
 </template>
@@ -35,12 +32,14 @@
   export default {
     data () {
       return {
-				drawer:false,
+				height:document.height,
+				drawer:true,
+				year:(new Date()).getFullYear(),
 				menus:[
-					{title:'Home','url':'/'},
-					{title:'My CV','url':'/cv'},
-					{title:'My Project','url':'/project'},
-					{title:'Contact Me','url':'/contact'}
+					{title:'Home',url:'/',icon:'home'},
+					{title:'My CV',url:'/cv',icon:'description'},
+					{title:'My Project',url:'/project',icon:'find_in_page'},
+					{title:'Contact Me',url:'/contact',icon:'contacts'}
 				]
       }
     }
@@ -50,4 +49,5 @@
 <style lang="stylus">
   @import './stylus/main'
 	@import './css/main.css'
+	@import '../node_modules/mdi/css/materialdesignicons.min.css'
 </style>

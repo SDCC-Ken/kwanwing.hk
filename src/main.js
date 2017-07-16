@@ -6,7 +6,6 @@ import Index from './Index.vue'
 import Cv from './Cv.vue'
 import Project from './Project.vue'
 import Contact from './Contact.vue'
-
 Vue.use(VueRouter)
 Vue.use(Vuetify)
 
