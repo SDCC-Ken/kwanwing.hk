@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "font-awesome-webpack": "0.0.5-beta.2",
-    "mdi": "^1.9.33",
-    "vue": "^2.2.1",
-    "vuetify": "^0.13.1"
+    "mdi": "^2.1.19",
+    "vue": "^2.5.13",
+    "vuetify": "^0.17.6"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -30,7 +30,7 @@
     "url-loader": "^0.5.9",
     "vue-icons": "^2.0.0",
     "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.1",
+    "vue-template-compiler": "^2.5.13",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }

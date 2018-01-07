@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-subheader>Software Work</v-subheader>
+		<v-subheader class="ma-3 display-2 special">Software Work</v-subheader>
 		<v-container fluid grid-list-sm>
 			<v-layout row wrap>
 				<v-flex xs6 v-for="item in program" :key="item.title">
@@ -8,7 +8,7 @@
 				</v-flex>
 			</v-layout>
 		</v-container>
-		<v-subheader>Paper Work</v-subheader>
+		<v-subheader class="ma-3 display-2 special">Paper Work</v-subheader>
 		<v-container fluid grid-list-sm>
 			<v-layout row wrap>
 				<v-flex xs6 v-for="item in paper" :key="item.title">
@@ -34,8 +34,7 @@ export default {
 						{label:'Type',content:'Web Application (JavaScript)'}
 					],
 					actions:[
-						{label:'Preview',url:''},
-						{label:'Source Code',url:''}
+						{label:'Preview',url:'showcase/hurry_waiter/index.html'},
 					]
 				},
 				{
@@ -45,31 +44,52 @@ export default {
 					],
 					actions:[
 						{label:'Preview',url:'showcase/ghost_leg_game/index.html'},
-						{label:'Source Code',url:''}
 					]
 				},
 				{
 					title:'School Management System (Microsoft SQL Server version)',
 					content:[
 						{label:'Type',content:'DataBase (Microsoft SQL Server)'},
+            {label:'Notices'},
 						{content:'You may need to use Microsoft SQL Server to see the work.'}
 					],
 					actions:[
-						{label:'Preview',url:'showcase/ghost_leg_game/index.html'}
+						{label:'Preview',url:'showcase/offlineproject/SPD4514.zip'}
 					]
 				},
 				{
 					title:'24Eating',
 					content:[
 						{label:'Type','content':'Web app (cordova)'},
+            {label:'Notices'},
 						{content:'Please note that ITACHO is only the example worked in this application.'},
-						{label:'Notices',content:'You should also allow installation other apps from sources other than Play Store before installing this application.'}
+						{content:'You should also allow installation other apps from sources other than Play Store before installing this application.'}
 					],
 					actions:[
-						{label:'Preview',url:''},
-						{label:'Source Code',url:''}
+						{label:'Preview',url:'showcase/offlineproject/app24eating-v0.1.5-final.apk'},
 					]
-				}
+				},
+        {
+          title:'School Management System',
+          content:[
+            {label:'Type','content':'MySQL and website'},
+          ],
+          actions:[
+            {label:'Preview',url:'showcase/database_work/index.html'},
+            {label:'Report',url:'showcase/offlineproject/CCN2240_report.pdf'},
+          ]
+        },
+        {
+          title:'English Vocabulary Game',
+          content:[
+            {label:'Subject:',content:'Information and Communication Technology'},
+            {label:'Language:',content:'Chinese'}
+          ],
+          actions:[
+            {label:'Preview',url:'showcase/school/index.html'},
+            {label:'Website',url:'showcase/offlineproject/ICT-SBA.pdf'},
+          ]
+        },
 			],
 			paper:[
 				{
@@ -101,7 +121,28 @@ export default {
 					actions:[
 						{label:'Download',url:'showcase/offlineproject/Case-Study-A&M-Records-v-napster-inc.pdf'}
 					]
-				}
+				},
+        {
+          title:'E-Business Start-up Plan for Discover Columbiana Authority',
+          content:[
+            {label:'Subject:',content:'E-Business'},
+            {label:'Language:',content:'English'}
+          ],
+          actions:[
+            {label:'Download',url:'showcase/offlineproject/E-Business_group_project.pdf'},
+            {label:'Website',url:'showcase/sample_website/index.html'},
+          ]
+        },
+        {
+          title:'以中華基督教會基智中學的學生為調查對象探討社交網站出現的網絡欺凌和網絡戀愛對於香港的九零年後出生的青少年行為的影響報告書',
+          content:[
+            {label:'Subject:',content:'Liberal Studies'},
+            {label:'Language:',content:'Chinese'}
+          ],
+          actions:[
+            {label:'Download',url:'showcase/offlineproject/IES.pdf'},
+          ]
+        },
 			]
 		};
 	}

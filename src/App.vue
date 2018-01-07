@@ -1,6 +1,6 @@
 <template>
 	<v-app standalone>
-		<v-navigation-drawer persistent absolute height="100%" clipped enable-resize-watcher v-model="drawer" right>
+		<v-navigation-drawer fixed v-model="drawer" right app>
 			<v-list dense>
 				<v-list-tile v-for="menu in menus" :key="menu.title" :to="menu.url">
 					<v-list-tile-action>
@@ -12,16 +12,16 @@
 				</v-list-tile>
 			</v-list>
 		</v-navigation-drawer>
-    <main>
-			<v-toolbar class="primary">
-	      <v-toolbar-title class="special white--text">Kwan Wing's Profile</v-toolbar-title>
-	      <v-spacer></v-spacer>
-	      <v-toolbar-side-icon @click.native.stop="drawer = !drawer" class="white--text hidden-md-and-up"></v-toolbar-side-icon>
-	    </v-toolbar>
-      <v-container fluid>
+    <v-toolbar fixed appdark color="primary">
+      <v-toolbar-title class="special white--text">Kwan Wing's Profile</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-side-icon @click.native.stop="drawer = !drawer" class="white--text hidden-md-and-up"></v-toolbar-side-icon>
+    </v-toolbar>
+    <v-content style="padding-top: 48px;">
+      <v-container fluid fill-height>
         <router-view></router-view>
       </v-container>
-    </main>
+    </v-content>
     <v-footer class="primary">
       <span class="white--text">© copyright 2015 - {{year}} Created By Chan Kwan Wing</span>
     </v-footer>

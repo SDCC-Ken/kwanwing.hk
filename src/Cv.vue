@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<div class="text-xs-center display-2 special">Curriculum Vitae</div>
-		<v-container fluid grid-list-md class="my-4">
+	<div style="width:100%">
+    <v-subheader class="ma-3 display-2 special">Curriculum Vitae</v-subheader>
+		<v-container fluid grid-list-sm>
 			<v-layout row>
 				<v-flex xs12>
 					<v-card>
@@ -15,12 +15,12 @@
 				</v-flex>
 			</v-layout>
 		</v-container>
-		<v-container fluid grid-list-md class="my-4">
+		<v-container fluid grid-list-sm>
 			<v-layout row>
 				<v-flex xs12>
-					<v-card>
-						<v-card-title class="my-2 display-1">Academic</v-card-title>
-						<v-stepper v-model="academic">
+					<v-card color="primary" style="padding:5px;">
+						<v-card-title class="my-2 display-1 white--text">Academic</v-card-title>
+						<v-stepper v-model="academic" style="margin:5px;">
 							<v-stepper-header class="ma-0">
 								<v-stepper-step step="M" class="step__circle" v-on:click.native="academic='M';">2016</v-stepper-step>
 								<v-divider></v-divider>
@@ -63,9 +63,9 @@
 		<v-container fluid grid-list-md class="my-4">
 			<v-layout row>
 				<v-flex xs12>
-					<v-card>
+					<v-card style="padding:5px;">
 						<v-card-title class="my-2 display-1">Working Experience</v-card-title>
-						<v-stepper v-model="working">
+						<v-stepper v-model="working" style="margin:5px;">
 							<v-stepper-header>
 								<v-stepper-step step="Y" class="step__circle" v-on:click.native="working='Y';">2016</v-stepper-step>
 								<v-divider></v-divider>
@@ -89,23 +89,42 @@
 		<v-container fluid grid-list-md class="my-4">
 			<v-layout row>
 				<v-flex xs12>
-					<v-card>
+					<v-card color="primary" style="padding:5px;" class="white--text">
 						<v-card-title class="my-2 display-1">Computer Skills</v-card-title>
 						<v-card-text>
 							<div>
 								<div>Web Development</div>
 								<div>
-									<v-chip>HTML 5</v-chip><v-chip>CSS 3</v-chip><v-chip>Bootstrap</v-chip>
-									<v-chip>JavaScript</v-chip><v-chip>Angular JS 1</v-chip>
-									<v-chip>Vue 2</v-chip><v-chip>Vuetify</v-chip>
-									<v-chip>PHP 7</v-chip><v-chip>Restful API</v-chip>
-									<v-chip>Yii 2</v-chip><v-chip>CodeIgniter</v-chip><v-chip>Ext4Yii</v-chip>
+                  <p>
+                    <v-chip>HTML 5</v-chip>
+                  </p>
+                  <p>
+                    <v-chip>CSS 3</v-chip><v-chip>Bootstrap</v-chip><v-chip>Material Design</v-chip>
+                  </p>
+									<p>
+                    <v-chip>JavaScript</v-chip>
+                    <v-chip>jQuery</v-chip>
+                    <v-chip>Angular JS 1</v-chip>
+                    <v-chip>React.js</v-chip>
+                    <v-chip>Vue 2</v-chip>
+                    <v-chip>Vuetify</v-chip>
+                  </p>
+                  <p>
+                    <v-chip>PHP 7</v-chip>
+                    <v-chip>Yii 2</v-chip>
+                    <v-chip>CodeIgniter</v-chip>
+                    <v-chip>Ext4Yii</v-chip>
+                  </p>
+                  <p>
+                    <v-chip>Restful API</v-chip>
+                  </p>
 								</div>
 							</div>
 							<div>
 								<div>Application Development</div>
 								<div>
 									<v-chip>Phonegap / Cordova</v-chip>
+                  <v-chip>React Native</v-chip>
 									<v-chip>Android Application Development (Java)</v-chip>
 									<v-chip>Windows Application (C#)</v-chip>
 								</div>
@@ -113,7 +132,7 @@
 							<div>
 								<div>Native</div>
 								<div>
-									<v-chip>C++</v-chip><v-chip>C#</v-chip>
+									<v-chip>JAVA</v-chip><v-chip>C++</v-chip><v-chip>C#</v-chip>
 								</div>
 							</div>
 							<div>
