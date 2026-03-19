@@ -1,0 +1,1032 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+  --breakpoint-fhd: 120rem;
+  --breakpoint-2k: 160rem;
+  --breakpoint-4k: 240rem;
+  --breakpoint-8k: 480rem;
+
+  --container-3xs: 16rem;
+  --container-2xs: 18rem;
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+  --container-8xl: 88rem;
+  --container-9xl: 96rem;
+  --container-10xl: 104rem;
+  --container-11xl: 112rem;
+  --container-12xl: 120rem;
+  --container-13xl: 128rem;
+  --container-14xl: 136rem;
+  --container-15xl: 144rem;
+  --container-16xl: 152rem;
+  --container-17xl: 160rem;
+  --container-18xl: 168rem;
+  --container-19xl: 176rem;
+  --container-20xl: 184rem;
+  --container-21xl: 192rem;
+  --container-22xl: 200rem;
+  --container-23xl: 208rem;
+  --container-24xl: 216rem;
+  --container-25xl: 224rem;
+  --container-26xl: 232rem;
+  --container-27xl: 240rem;
+
+  /* Typography */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Outfit", "Inter", sans-serif;
+
+  --animate-float: float 3s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* ✅ Map CSS Variables to Utility Classes */
+  /* Usage: bg-primary, text-primary-500, border-error */
+  
+  /* Primary Palette */
+  --color-primary: var(--color-primary);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  
+  /* Secondary Palette */
+  --color-secondary: var(--color-secondary);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  
+  /* Danger Palette */
+  --color-danger: var(--color-danger);
+  --color-danger-100: var(--color-danger-100);
+  --color-danger-200: var(--color-danger-200);
+  --color-danger-300: var(--color-danger-300);
+  --color-danger-400: var(--color-danger-400);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-600: var(--color-danger-600);
+  --color-danger-700: var(--color-danger-700);
+  --color-danger-800: var(--color-danger-800);
+  --color-danger-900: var(--color-danger-900);
+  
+  /* Error Palette (alias to danger) */
+  --color-error: var(--color-error);
+  --color-error-100: var(--color-error-100);
+  --color-error-200: var(--color-error-200);
+  --color-error-300: var(--color-error-300);
+  --color-error-400: var(--color-error-400);
+  --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600);
+  --color-error-700: var(--color-error-700);
+  --color-error-800: var(--color-error-800);
+  --color-error-900: var(--color-error-900);
+  
+  /* Success Palette */
+  --color-success: var(--color-success);
+  --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200);
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800);
+  --color-success-900: var(--color-success-900);
+  
+  /* Warning Palette */
+  --color-warning: var(--color-warning);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-200: var(--color-warning-200);
+  --color-warning-300: var(--color-warning-300);
+  --color-warning-400: var(--color-warning-400);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+  --color-warning-700: var(--color-warning-700);
+  --color-warning-800: var(--color-warning-800);
+  --color-warning-900: var(--color-warning-900);
+  
+  /* Info Palette */
+  --color-info: var(--color-info);
+  --color-info-100: var(--color-info-100);
+  --color-info-200: var(--color-info-200);
+  --color-info-300: var(--color-info-300);
+  --color-info-400: var(--color-info-400);
+  --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600);
+  --color-info-700: var(--color-info-700);
+  --color-info-800: var(--color-info-800);
+  --color-info-900: var(--color-info-900);
+  
+  /* Background Palette */
+  --color-background: var(--color-background);
+  --color-background-100: var(--color-background-100);
+  --color-background-200: var(--color-background-200);
+  --color-background-300: var(--color-background-300);
+  --color-background-400: var(--color-background-400);
+  --color-background-500: var(--color-background-500);
+  --color-background-600: var(--color-background-600);
+  --color-background-700: var(--color-background-700);
+  --color-background-800: var(--color-background-800);
+  --color-background-900: var(--color-background-900);
+  
+  /* Text/Neutral Palette */
+  --color-text: var(--color-text);
+  --color-text-100: var(--color-text-100);
+  --color-text-200: var(--color-text-200);
+  --color-text-300: var(--color-text-300);
+  --color-text-400: var(--color-text-400);
+  --color-text-500: var(--color-text-500);
+  --color-text-600: var(--color-text-600);
+  --color-text-700: var(--color-text-700);
+  --color-text-800: var(--color-text-800);
+  --color-text-900: var(--color-text-900);
+  
+  /* Semantic Aliases for Common Use */
+  --color-surface: var(--aui-background-color);
+  --color-surface-muted: var(--aui-surface-muted);
+  --color-main: var(--aui-text-main);
+  --color-muted: var(--aui-text-muted);
+
+  /* Component Semantic Aliases */
+  /* Button */
+  --color-btn-primary-bg: var(--aui-btn-primary-bg);
+  --color-btn-primary-text: var(--aui-btn-primary-text);
+  --color-btn-primary-border: var(--aui-btn-primary-border);
+  
+  --color-btn-secondary-bg: var(--aui-btn-secondary-bg);
+  --color-btn-secondary-text: var(--aui-btn-secondary-text);
+  --color-btn-secondary-border: var(--aui-btn-secondary-border);
+
+  --color-btn-success-bg: var(--aui-btn-success-bg);
+  --color-btn-success-text: var(--aui-btn-success-text);
+  --color-btn-success-border: var(--aui-btn-success-border);
+
+  --color-btn-error-bg: var(--aui-btn-error-bg);
+  --color-btn-error-text: var(--aui-btn-error-text);
+  --color-btn-error-border: var(--aui-btn-error-border);
+
+  --color-btn-warning-bg: var(--aui-btn-warning-bg);
+  --color-btn-warning-text: var(--aui-btn-warning-text);
+  --color-btn-warning-border: var(--aui-btn-warning-border);
+
+  --color-btn-neutral-bg: var(--aui-btn-neutral-bg);
+  --color-btn-neutral-text: var(--aui-btn-neutral-text);
+  --color-btn-neutral-border: var(--aui-btn-neutral-border);
+
+  --radius-btn: var(--aui-btn-radius);
+  --radius-card: var(--aui-card-radius);
+
+  /* Card */
+  --color-card-bg: var(--aui-card-bg);
+  --color-card-border: var(--aui-card-border);
+  --color-card-text: var(--aui-card-text);
+
+  /* Stepper */
+  --color-stepper-indicator-inactive: var(--aui-stepper-indicator-inactive);
+  --color-stepper-indicator-active: var(--aui-stepper-indicator-active);
+  --color-stepper-indicator-completed: var(--aui-stepper-indicator-completed);
+  --color-stepper-connector: var(--aui-stepper-connector);
+
+  /* Nav */
+  --color-nav-bg: var(--aui-nav-bg);
+  --color-nav-border: var(--aui-nav-border);
+  --color-nav-item-text: var(--aui-nav-item-text);
+  --color-nav-item-active-bg: var(--aui-nav-item-active-bg);
+
+  /* Carousel */
+  --color-carousel-nav-bg: var(--aui-carousel-nav-bg);
+  --color-carousel-nav-text: var(--aui-carousel-nav-text);
+  --color-carousel-dot: var(--aui-carousel-dot);
+  --color-carousel-dot-active: var(--aui-carousel-dot-active);
+
+  /* Chip */
+  --color-chip-primary-bg: var(--aui-chip-primary-bg);
+  --color-chip-primary-text: var(--aui-chip-primary-text);
+  --color-chip-primary-border: var(--aui-chip-primary-border);
+}
+
+/* 
+  5. Style-specific overrides for Component Aliases 
+  These define the "feel" of each AUI style.
+*/
+
+.aui-style-liquid-glass {
+  --aui-btn-radius: 0.5rem;
+  --aui-card-radius: 1rem;
+
+  /* Button Liquid Glass */
+  --aui-btn-primary-bg: var(--color-primary-500) / 0.2;
+  --aui-btn-primary-text: var(--color-primary-100);
+  --aui-btn-primary-border: var(--color-primary-400) / 0.3;
+
+  --aui-btn-secondary-bg: var(--color-secondary-500) / 0.2;
+  --aui-btn-secondary-text: var(--color-secondary-100);
+  --aui-btn-secondary-border: var(--color-secondary-400) / 0.3;
+
+  --aui-btn-success-bg: var(--color-success-500) / 0.2;
+  --aui-btn-success-text: var(--color-success-100);
+  --aui-btn-success-border: var(--color-success-400) / 0.3;
+
+  --aui-btn-error-bg: var(--color-danger-500) / 0.2;
+  --aui-btn-error-text: var(--color-danger-100);
+  --aui-btn-error-border: var(--color-danger-400) / 0.3;
+
+  --aui-btn-warning-bg: var(--color-warning-500) / 0.2;
+  --aui-btn-warning-text: var(--color-warning-100);
+  --aui-btn-warning-border: var(--color-warning-400) / 0.3;
+
+  --aui-btn-neutral-bg: var(--color-text-100) / 0.1;
+  --aui-btn-neutral-text: var(--color-text-100) / 0.8;
+  --aui-btn-neutral-border: var(--color-text-100) / 0.2;
+
+  /* Card Liquid Glass */
+  --aui-card-bg: var(--color-background-900) / 0.3;
+  --aui-card-border: var(--color-text-100) / 0.1;
+  --aui-card-text: var(--aui-text-main);
+
+  /* Stepper Liquid Glass */
+  --aui-stepper-indicator-inactive: var(--color-text-100) / 0.2;
+  --aui-stepper-indicator-active: var(--color-primary-500) / 0.3;
+  --aui-stepper-indicator-completed: var(--color-success-500) / 0.2;
+  --aui-stepper-connector: var(--color-text-100) / 0.1;
+
+  /* Nav Liquid Glass */
+  --aui-nav-bg: var(--color-background-900) / 0.3;
+  --aui-nav-border: var(--color-text-100) / 0.1;
+  --aui-nav-item-text: var(--color-text-100) / 0.7;
+  --aui-nav-item-active-bg: var(--color-text-100) / 0.2;
+
+  /* Carousel Liquid Glass */
+  --aui-carousel-nav-bg: var(--color-background-900) / 0.4;
+  --aui-carousel-nav-text: var(--color-text-100) / 0.8;
+  --aui-carousel-dot: var(--color-text-100) / 0.3;
+  --aui-carousel-dot-active: var(--color-text-100) / 0.8;
+
+  /* Chip Liquid Glass */
+  --aui-chip-primary-bg: var(--color-primary-500) / 0.1;
+  --aui-chip-primary-text: var(--color-primary-100);
+  --aui-chip-primary-border: var(--color-primary-500) / 0.3;
+}
+
+.aui-style-material {
+  --aui-btn-radius: 0.375rem;
+  --aui-card-radius: 0.25rem;
+
+  /* Button Material */
+  --aui-btn-primary-bg: var(--color-primary-600);
+  --aui-btn-primary-text: var(--color-text-100);
+  --aui-btn-primary-border: transparent;
+
+  --aui-btn-secondary-bg: var(--color-secondary-600);
+  --aui-btn-secondary-text: var(--color-text-100);
+  --aui-btn-secondary-border: transparent;
+
+  --aui-btn-success-bg: var(--color-success-600);
+  --aui-btn-success-text: var(--color-text-100);
+  --aui-btn-success-border: transparent;
+
+  --aui-btn-error-bg: var(--color-danger-600);
+  --aui-btn-error-text: var(--color-text-100);
+  --aui-btn-error-border: transparent;
+
+  --aui-btn-warning-bg: var(--color-warning-600);
+  --aui-btn-warning-text: var(--color-text-100);
+  --aui-btn-warning-border: transparent;
+
+  --aui-btn-neutral-bg: var(--color-secondary-200);
+  --aui-btn-neutral-text: var(--color-secondary-800);
+  --aui-btn-neutral-border: transparent;
+
+  /* Card Material */
+  --aui-card-bg: var(--color-background-500);
+  --aui-card-border: var(--color-background-200);
+  --aui-card-text: var(--aui-text-main);
+
+  /* Stepper Material */
+  --aui-stepper-indicator-inactive: var(--color-secondary-300);
+  --aui-stepper-indicator-active: var(--color-primary-600);
+  --aui-stepper-indicator-completed: var(--color-primary-600);
+  --aui-stepper-connector: var(--color-secondary-300);
+
+  /* Nav Material */
+  --aui-nav-bg: transparent;
+  --aui-nav-border: transparent;
+  --aui-nav-item-text: var(--color-text-200);
+  --aui-nav-item-active-bg: transparent;
+
+  /* Carousel Material */
+  --aui-carousel-nav-bg: var(--color-background-500) / 0.8;
+  --aui-carousel-nav-text: var(--color-text-500);
+  --aui-carousel-dot: var(--color-secondary-400);
+  --aui-carousel-dot-active: var(--color-text-300);
+
+  /* Chip Material */
+  --aui-chip-primary-bg: var(--color-primary-100);
+  --aui-chip-primary-text: var(--color-primary-800);
+  --aui-chip-primary-border: transparent;
+}
+
+.aui-style-bootstrap {
+  --aui-btn-radius: 0.25rem;
+  --aui-card-radius: 0.375rem;
+
+  /* Button Bootstrap */
+  --aui-btn-primary-bg: var(--color-primary-500);
+  --aui-btn-primary-text: var(--color-text-100);
+  --aui-btn-primary-border: var(--color-primary-500);
+
+  --aui-btn-secondary-bg: var(--color-secondary-500);
+  --aui-btn-secondary-text: var(--color-text-100);
+  --aui-btn-secondary-border: var(--color-secondary-500);
+
+  --aui-btn-success-bg: var(--color-success-500);
+  --aui-btn-success-text: var(--color-text-100);
+  --aui-btn-success-border: var(--color-success-500);
+
+  --aui-btn-error-bg: var(--color-danger-500);
+  --aui-btn-error-text: var(--color-text-100);
+  --aui-btn-error-border: var(--color-danger-500);
+
+  --aui-btn-warning-bg: var(--color-warning-500);
+  --aui-btn-warning-text: var(--color-text-100);
+  --aui-btn-warning-border: var(--color-warning-500);
+
+  --aui-btn-neutral-bg: var(--color-background-500);
+  --aui-btn-neutral-text: var(--color-text-700);
+  --aui-btn-neutral-border: var(--color-secondary-300);
+
+  /* Card Bootstrap */
+  --aui-card-bg: var(--color-background-500);
+  --aui-card-border: var(--color-background-300);
+  --aui-card-text: var(--aui-text-main);
+
+  /* Stepper Bootstrap */
+  --aui-stepper-indicator-inactive: var(--color-secondary-300);
+  --aui-stepper-indicator-active: var(--color-primary-500);
+  --aui-stepper-indicator-completed: var(--color-success-500);
+  --aui-stepper-connector: var(--color-background-200);
+
+  /* Nav Bootstrap */
+  --aui-nav-bg: transparent;
+  --aui-nav-border: var(--color-background-300);
+  --aui-nav-item-text: var(--color-text-500);
+  --aui-nav-item-active-bg: transparent;
+
+  /* Carousel Bootstrap */
+  --aui-carousel-nav-bg: var(--color-background-900) / 0.5;
+  --aui-carousel-nav-text: var(--color-text-100);
+  --aui-carousel-dot: var(--color-text-100);
+  --aui-carousel-dot-active: var(--color-text-100);
+
+  /* Chip Bootstrap */
+  --aui-chip-primary-bg: var(--color-primary-100);
+  --aui-chip-primary-text: var(--color-primary-800);
+  --aui-chip-primary-border: transparent;
+}
+
+.aui-style-windows {
+  --aui-btn-radius: 0.125rem;
+  --aui-card-radius: 0;
+
+  /* Button Windows */
+  --aui-btn-primary-bg: var(--color-primary-600);
+  --aui-btn-primary-text: var(--color-text-100);
+  --aui-btn-primary-border: transparent;
+
+  --aui-btn-secondary-bg: var(--color-secondary-600);
+  --aui-btn-secondary-text: var(--color-text-100);
+  --aui-btn-secondary-border: transparent;
+
+  --aui-btn-success-bg: var(--color-success-600);
+  --aui-btn-success-text: var(--color-text-100);
+  --aui-btn-success-border: transparent;
+
+  --aui-btn-error-bg: var(--color-danger-600);
+  --aui-btn-error-text: var(--color-text-100);
+  --aui-btn-error-border: transparent;
+
+  --aui-btn-warning-bg: var(--color-warning-600);
+  --aui-btn-warning-text: var(--color-text-100);
+  --aui-btn-warning-border: transparent;
+
+  --aui-btn-neutral-bg: var(--color-background-500);
+  --aui-btn-neutral-text: var(--color-text-900);
+  --aui-btn-neutral-border: var(--color-secondary-300);
+
+  /* Card Windows */
+  --aui-card-bg: var(--color-background-500);
+  --aui-card-border: var(--color-secondary-400);
+  --aui-card-text: var(--aui-text-main);
+
+  /* Stepper Windows */
+  --aui-stepper-indicator-inactive: var(--color-secondary-400);
+  --aui-stepper-indicator-active: var(--color-primary-600);
+  --aui-stepper-indicator-completed: var(--color-primary-600);
+  --aui-stepper-connector: var(--color-secondary-300);
+
+  /* Nav Windows */
+  --aui-nav-bg: transparent;
+  --aui-nav-border: transparent;
+  --aui-nav-item-text: var(--color-text-800);
+  --aui-nav-item-active-bg: var(--color-background-300);
+
+  /* Carousel Windows */
+  --aui-carousel-nav-bg: var(--color-background-500) / 0.7;
+  --aui-carousel-nav-text: var(--color-text-900);
+  --aui-carousel-dot: var(--color-secondary-600);
+  --aui-carousel-dot-active: var(--color-text-900);
+
+  /* Chip Windows */
+  --aui-chip-primary-bg: var(--color-primary-100);
+  --aui-chip-primary-text: var(--color-primary-800);
+  --aui-chip-primary-border: var(--color-primary-300);
+}
+/* Removed @source loop candidate */
+/*
+  Best Practice:
+  1. Define foundational, non-theme-specific variables in `:root`.
+     This includes base font/spacing units and the raw color tokens for all themes.
+*/
+:root {
+  --aui-base-font-size: 16px;
+  --aui-font-family: "Inter", "Noto Sans TC", sans-serif;
+  --aui-spacing-unit: 0.25rem;
+  --aui-contrast-dark-text: oklch(15% 0 0); /* Near-black for high contrast */
+  --aui-contrast-light-text: oklch(98% 0 0); /* Near-white for high contrast */
+
+  /* Light Mode: 清澈天藍 (水) + 深邃藍 (水) + 純白 (金) */
+  --aui-light-primary-color: #32a9e1;   /* 來自 Logo 的天藍色，最核心的補水能量 */
+  --aui-light-secondary-color: #1e40af; /* 深藍色，代表深水的穩定性，適合輔助按鈕 */
+  --aui-light-background-color: #ffffff; /* 使用純白，五行屬金，金能生水 */
+
+  /* Dark Mode: 霓虹藍 (水/金) + 灰藍 (金) + 宇宙黑 (水之極) */
+  --aui-dark-primary-color: #7dd3fc;    /* 稍微亮化的天藍，在深色背景下具備發光感 */
+  --aui-dark-secondary-color: #94a3b8;  /* 冷灰色調，屬金，幫助舒緩火氣 */
+  --aui-dark-background-color: #020617; /* 比 SME 的底色更深 (Slate 950)，代表最純淨的水氣 */
+
+  /* Neutral Color (Text Base): Maps to text/border colors */
+  --aui-light-neutral-color: #0f172a; /* Slate 900 for Light Mode text */
+  --aui-dark-neutral-color: #f8fafc;  /* Slate 50 for Dark Mode text */
+}
+
+html {
+  font-size: var(--aui-base-font-size, 16px);
+  font-family: var(--aui-font-family, "Arial", sans-serif);
+}
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+  2. Use theme classes to create "alias" variables that point to the raw tokens.
+     This is the switchboard for your themes. Here we also generate semantic colors.
+*/
+.aui-theme-light,
+.aui-theme-dark,
+.aui-theme-system {
+  /* --- Automatic Semantic Color Generation --- */
+  /* We derive these from the primary color by rotating the hue (h). */
+  /* This keeps the same lightness and saturation for a consistent theme feel. */
+  --aui-danger-color: oklch(
+    from var(--aui-primary-color) l c 25
+  ); /* Hue is rotated to red */
+  --aui-error-color: oklch(
+    from var(--aui-primary-color) l c 25
+  ); /* Hue is rotated to red */
+  --aui-warning-color: oklch(
+    from var(--aui-primary-color) l c 110
+  ); /* Hue is rotated to yellow */
+  --aui-success-color: oklch(
+    from var(--aui-primary-color) l c 150
+  ); /* Hue is rotated to green */
+  --aui-info-color: oklch(
+    from var(--aui-primary-color) l c 230
+  ); /* Hue is rotated to blue */
+}
+
+.aui-theme-light {
+  /* Semantic Text Aliases */
+  --aui-text-main: var(--color-text-900);
+  --aui-text-muted: var(--color-text-500); /* Medium gray for better visual hierarchy */
+  --aui-text-disabled: var(--color-text-400);
+
+  /* Semantic Surface Aliases */
+  --aui-surface-muted: var(--color-background-600); /* Darker (Off-white) */
+
+  --aui-primary-color: var(--aui-light-primary-color);
+  --aui-secondary-color: var(--aui-light-secondary-color);
+  --aui-background-color: var(--aui-light-background-color);
+  --aui-neutral-color: var(--aui-light-neutral-color);
+}
+
+.aui-theme-dark {
+  /* Semantic Text Aliases */
+  --aui-text-main: var(--color-text-100);
+  --aui-text-muted: var(--color-text-400); /* Medium gray for better visual hierarchy */
+  --aui-text-disabled: var(--color-text-600);
+
+  /* Semantic Surface Aliases */
+  --aui-surface-muted: var(--color-background-400); /* Lighter (Dark Grey) */
+
+  --aui-primary-color: var(--aui-dark-primary-color);
+  --aui-secondary-color: var(--aui-dark-secondary-color);
+  --aui-background-color: var(--aui-dark-background-color);
+  --aui-neutral-color: var(--aui-dark-neutral-color);
+}
+
+/*
+  3. For the system theme, use a media query to apply the correct aliases.
+*/
+.aui-theme-system {
+  /* Semantic Text Aliases */
+  --aui-text-main: var(--color-text-900);
+  --aui-text-muted: var(--color-text-500);
+  --aui-text-disabled: var(--color-text-400);
+
+  /* Semantic Surface Aliases */
+  --aui-surface-muted: var(--color-background-600);
+
+  color-scheme: light dark;
+  --aui-primary-color: var(--aui-light-primary-color);
+  --aui-secondary-color: var(--aui-light-secondary-color);
+  --aui-background-color: var(--aui-light-background-color);
+  --aui-neutral-color: var(--aui-light-neutral-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .aui-theme-system {
+    /* Semantic Text Aliases for Dark Mode in System */
+    --aui-text-main: var(--color-text-100);
+    --aui-text-muted: var(--color-text-400);
+    --aui-text-disabled: var(--color-text-600);
+
+    /* Semantic Surface Aliases for Dark Mode */
+    --aui-surface-muted: var(--color-background-400);
+
+    --aui-primary-color: var(--aui-dark-primary-color);
+    --aui-secondary-color: var(--aui-dark-secondary-color);
+    --aui-background-color: var(--aui-dark-background-color);
+    --aui-neutral-color: var(--aui-dark-neutral-color);
+  }
+}
+
+/*
+  4. Generate the full color palette and spacing scale for ANY active theme.
+*/
+.aui-theme-light,
+.aui-theme-dark,
+.aui-theme-system {
+  /* Spacing Scale */
+  --aui-spacing-1: calc(1 * var(--aui-spacing-unit));
+  --aui-spacing-2: calc(2 * var(--aui-spacing-unit));
+  --aui-spacing-3: calc(3 * var(--aui-spacing-unit));
+  --aui-spacing-4: calc(4 * var(--aui-spacing-unit));
+  --aui-spacing-5: calc(5 * var(--aui-spacing-unit));
+  --aui-spacing-6: calc(6 * var(--aui-spacing-unit));
+
+  /* --- Generated Color Palettes --- */
+
+  /* Background Palette */
+  --color-background: var(--aui-background-color);
+  --color-background-500: var(--aui-background-color);
+  --color-background-400: oklch(from var(--color-background-500) calc(l + 0.05) c h);
+  --color-background-300: oklch(from var(--color-background-500) calc(l + 0.1) c h);
+  --color-background-200: oklch(from var(--color-background-500) calc(l + 0.15) c h);
+  --color-background-100: oklch(from var(--color-background-500) calc(l + 0.2) c h);
+  --color-background-600: oklch(from var(--color-background-500) calc(l - 0.05) c h);
+  --color-background-700: oklch(from var(--color-background-500) calc(l - 0.1) c h);
+  --color-background-800: oklch(from var(--color-background-500) calc(l - 0.15) c h);
+  --color-background-900: oklch(from var(--color-background-500) calc(l - 0.2) c h);
+  --color-background-text-100: color-contrast(
+    var(--color-background-100) vs var(--aui-contrast-light-text),
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-200: color-contrast(
+    var(--color-background-200) vs var(--aui-contrast-light-text),
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-300: color-contrast(
+    var(--color-background-300) vs var(--aui-contrast-light-text),
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-400: color-contrast(
+    var(--color-background-400) vs var(--aui-contrast-light-text),
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-500: color-contrast(
+    var(--color-background-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-600: color-contrast(
+    var(--color-background-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-700: color-contrast(
+    var(--color-background-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-800: color-contrast(
+    var(--color-background-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-background-text-900: color-contrast(
+    var(--color-background-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Primary Palette */
+  --color-primary: var(--aui-primary-color);
+  --color-primary-500: var(--aui-primary-color);
+  --color-primary-400: oklch(from var(--color-primary-500) calc(l + 0.1) c h);
+  --color-primary-300: oklch(from var(--color-primary-500) calc(l + 0.2) c h);
+  --color-primary-200: oklch(from var(--color-primary-500) calc(l + 0.3) c h);
+  --color-primary-100: oklch(from var(--color-primary-500) calc(l + 0.4) c h);
+  --color-primary-600: oklch(from var(--color-primary-500) calc(l - 0.1) c h);
+  --color-primary-700: oklch(from var(--color-primary-500) calc(l - 0.2) c h);
+  --color-primary-800: oklch(from var(--color-primary-500) calc(l - 0.3) c h);
+  --color-primary-900: oklch(from var(--color-primary-500) calc(l - 0.4) c h);
+  --color-primary-text-100: color-contrast(
+    var(--color-primary-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-200: color-contrast(
+    var(--color-primary-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-300: color-contrast(
+    var(--color-primary-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-400: color-contrast(
+    var(--color-primary-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-500: color-contrast(
+    var(--color-primary-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-600: color-contrast(
+    var(--color-primary-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-700: color-contrast(
+    var(--color-primary-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-800: color-contrast(
+    var(--color-primary-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-primary-text-900: color-contrast(
+    var(--color-primary-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Secondary Palette */
+  --color-secondary: var(--aui-secondary-color);
+  --color-secondary-500: var(--aui-secondary-color);
+  --color-secondary-400: oklch(from var(--color-secondary-500) calc(l + 0.1) c h);
+  --color-secondary-300: oklch(from var(--color-secondary-500) calc(l + 0.2) c h);
+  --color-secondary-200: oklch(from var(--color-secondary-500) calc(l + 0.3) c h);
+  --color-secondary-100: oklch(from var(--color-secondary-500) calc(l + 0.4) c h);
+  --color-secondary-600: oklch(from var(--color-secondary-500) calc(l - 0.1) c h);
+  --color-secondary-700: oklch(from var(--color-secondary-500) calc(l - 0.2) c h);
+  --color-secondary-800: oklch(from var(--color-secondary-500) calc(l - 0.3) c h);
+  --color-secondary-900: oklch(from var(--color-secondary-500) calc(l - 0.4) c h);
+  --color-secondary-text-100: color-contrast(
+    var(--color-secondary-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-200: color-contrast(
+    var(--color-secondary-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-300: color-contrast(
+    var(--color-secondary-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-400: color-contrast(
+    var(--color-secondary-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-500: color-contrast(
+    var(--color-secondary-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-600: color-contrast(
+    var(--color-secondary-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-700: color-contrast(
+    var(--color-secondary-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-800: color-contrast(
+    var(--color-secondary-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-secondary-text-900: color-contrast(
+    var(--color-secondary-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Danger Palette */
+  --color-danger: var(--aui-danger-color);
+  --color-danger-500: var(--aui-danger-color);
+  --color-danger-400: oklch(from var(--color-danger-500) calc(l + 0.1) c h);
+  --color-danger-300: oklch(from var(--color-danger-500) calc(l + 0.2) c h);
+  --color-danger-200: oklch(from var(--color-danger-500) calc(l + 0.3) c h);
+  --color-danger-100: oklch(from var(--color-danger-500) calc(l + 0.4) c h);
+  --color-danger-600: oklch(from var(--color-danger-500) calc(l - 0.1) c h);
+  --color-danger-700: oklch(from var(--color-danger-500) calc(l - 0.2) c h);
+  --color-danger-800: oklch(from var(--color-danger-500) calc(l - 0.3) c h);
+  --color-danger-900: oklch(from var(--color-danger-500) calc(l - 0.4) c h);
+  --color-danger-text-100: color-contrast(
+    var(--color-danger-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-200: color-contrast(
+    var(--color-danger-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-300: color-contrast(
+    var(--color-danger-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-400: color-contrast(
+    var(--color-danger-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-500: color-contrast(
+    var(--color-danger-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-600: color-contrast(
+    var(--color-danger-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-700: color-contrast(
+    var(--color-danger-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-800: color-contrast(
+    var(--color-danger-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-danger-text-900: color-contrast(
+    var(--color-danger-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Success Palette */
+  --color-success: var(--aui-success-color);
+  --color-success-500: var(--aui-success-color);
+  --color-success-400: oklch(from var(--color-success-500) calc(l + 0.1) c h);
+  --color-success-300: oklch(from var(--color-success-500) calc(l + 0.2) c h);
+  --color-success-200: oklch(from var(--color-success-500) calc(l + 0.3) c h);
+  --color-success-100: oklch(from var(--color-success-500) calc(l + 0.4) c h);
+  --color-success-600: oklch(from var(--color-success-500) calc(l - 0.1) c h);
+  --color-success-700: oklch(from var(--success-500) calc(l - 0.2) c h);
+  --color-success-800: oklch(from var(--color-success-500) calc(l - 0.3) c h);
+  --color-success-900: oklch(from var(--color-success-500) calc(l - 0.4) c h);
+  --color-success-text-100: color-contrast(
+    var(--color-success-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-200: color-contrast(
+    var(--color-success-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-300: color-contrast(
+    var(--color-success-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-400: color-contrast(
+    var(--color-success-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-500: color-contrast(
+    var(--color-success-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-600: color-contrast(
+    var(--color-success-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-700: color-contrast(
+    var(--color-success-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-800: color-contrast(
+    var(--color-success-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-success-text-900: color-contrast(
+    var(--color-success-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Warning Palette */
+  --color-warning: var(--aui-warning-color);
+  --color-warning-500: var(--aui-warning-color);
+  --color-warning-400: oklch(from var(--color-warning-500) calc(l + 0.1) c h);
+  --color-warning-300: oklch(from var(--color-warning-500) calc(l + 0.2) c h);
+  --color-warning-200: oklch(from var(--color-warning-500) calc(l + 0.3) c h);
+  --color-warning-100: oklch(from var(--color-warning-500) calc(l + 0.4) c h);
+  --color-warning-600: oklch(from var(--color-warning-500) calc(l - 0.1) c h);
+  --color-warning-700: oklch(from var(--color-warning-500) calc(l - 0.2) c h);
+  --color-warning-800: oklch(from var(--color-warning-500) calc(l - 0.3) c h);
+  --color-warning-900: oklch(from var(--color-warning-500) calc(l - 0.4) c h);
+  --color-warning-text-100: color-contrast(
+    var(--color-warning-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-200: color-contrast(
+    var(--color-warning-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-300: color-contrast(
+    var(--color-warning-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-400: color-contrast(
+    var(--color-warning-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-500: color-contrast(
+    var(--color-warning-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-600: color-contrast(
+    var(--color-warning-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-700: color-contrast(
+    var(--color-warning-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-800: color-contrast(
+    var(--color-warning-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-warning-text-900: color-contrast(
+    var(--color-warning-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Error Palette */
+  --color-error: var(--aui-error-color);
+  --color-error-500: var(--aui-error-color);
+  --color-error-400: oklch(from var(--color-error-500) calc(l + 0.1) c h);
+  --color-error-300: oklch(from var(--color-error-500) calc(l + 0.2) c h);
+  --color-error-200: oklch(from var(--color-error-500) calc(l + 0.3) c h);
+  --color-error-100: oklch(from var(--color-error-500) calc(l + 0.4) c h);
+  --color-error-600: oklch(from var(--color-error-500) calc(l - 0.1) c h);
+  --color-error-700: oklch(from var(--color-error-500) calc(l - 0.2) c h);
+  --color-error-800: oklch(from var(--color-error-500) calc(l - 0.3) c h);
+  --color-error-900: oklch(from var(--color-error-500) calc(l - 0.4) c h);
+  --color-error-text-100: color-contrast(
+    var(--color-error-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-200: color-contrast(
+    var(--color-error-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-300: color-contrast(
+    var(--color-error-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-400: color-contrast(
+    var(--color-error-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-500: color-contrast(
+    var(--color-error-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-600: color-contrast(
+    var(--color-error-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-700: color-contrast(
+    var(--color-error-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-800: color-contrast(
+    var(--color-error-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-error-text-900: color-contrast(
+    var(--color-error-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+
+  /* Info Palette */
+  --color-info: var(--aui-info-color);
+  --color-info-500: var(--aui-info-color);
+  --color-info-400: oklch(from var(--color-info-500) calc(l + 0.1) c h);
+  --color-info-300: oklch(from var(--color-info-500) calc(l + 0.2) c h);
+  --color-info-200: oklch(from var(--color-info-500) calc(l + 0.3) c h);
+  --color-info-100: oklch(from var(--color-info-500) calc(l + 0.4) c h);
+  --color-info-600: oklch(from var(--color-info-500) calc(l - 0.1) c h);
+  --color-info-700: oklch(from var(--color-info-500) calc(l - 0.2) c h);
+  --color-info-800: oklch(from var(--color-info-500) calc(l - 0.3) c h);
+  --color-info-900: oklch(from var(--color-info-500) calc(l - 0.4) c h);
+  --color-info-text-100: color-contrast(
+    var(--color-info-100) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-200: color-contrast(
+    var(--color-info-200) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-300: color-contrast(
+    var(--color-info-300) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-400: color-contrast(
+    var(--color-info-400) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-500: color-contrast(
+    var(--color-info-500) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-600: color-contrast(
+    var(--color-info-600) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-700: color-contrast(
+    var(--color-info-700) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-800: color-contrast(
+    var(--color-info-800) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  --color-info-text-900: color-contrast(
+    var(--color-info-900) vs var(--aui-contrast-light-text)
+    var(--aui-contrast-dark-text)
+  );
+  /* Neutral/Text Palette */
+  --aui-text-color: var(--aui-neutral-color); /* Main Text Color Alias */
+  --color-text: var(--aui-neutral-color);
+  --color-text-500: var(--aui-neutral-color);
+  --color-text-400: oklch(from var(--color-text-500) calc(l + 0.1) c h);
+  --color-text-300: oklch(from var(--color-text-500) calc(l + 0.2) c h);
+  --color-text-200: oklch(from var(--color-text-500) calc(l + 0.3) c h);
+  --color-text-100: oklch(from var(--color-text-500) calc(l + 0.4) c h);
+  --color-text-600: oklch(from var(--color-text-500) calc(l - 0.1) c h);
+  --color-text-700: oklch(from var(--color-text-500) calc(l - 0.2) c h);
+  --color-text-800: oklch(from var(--color-text-500) calc(l - 0.3) c h);
+  --color-text-900: oklch(from var(--color-text-500) calc(l - 0.4) c h);
+}
+
+/* Base HTML and Body styles */
+html {
+  font-size: var(--aui-base-font-size, 16px);
+  font-family: var(--aui-font-family, sans-serif);
+}
+
+body {
+  background-color: var(--color-background-500);
+  color: var(--aui-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}

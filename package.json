@@ -1,41 +1,33 @@
 {
   "name": "kwanwing.hk",
-  "description": "Kwanwing.hk Vue2",
+  "description": "Kwanwing.hk Nuxt 4",
   "version": "1.0.0",
-  "author": "ken <wingwingchan2002@gmail.com>",
+  "author": "ken <kenchanjp2024@gmail.com>",
   "private": true,
-    "engines": {
-    "node": "16.x"
-  },
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "wrangler pages dev .output/public",
+    "deploy": "bun run build && bun run generate-cv && wrangler pages deploy .output/public",
+    "generate-cv": "bun run scripts/generate-cv.ts",
+    "watch-cv": "bun run scripts/watch-cv.ts",
+    "postinstall": "nuxt prepare",
+    "cleandev": "rm -rf .nuxt && rm -rf node_modules && bun install && bun run dev"
   },
   "dependencies": {
-    "font-awesome-webpack": "0.0.5-beta.2",
-    "mdi": "^2.1.19",
-    "vue": "^2.5.13",
-    "vue-router": "^3.0.1",
-    "vuetify": "^0.17.6"
+    "@floating-ui/vue": "^1.1.9",
+    "@nuxt/icon": "^1.1.0",
+    "@nuxtjs/i18n": "^8.3.1",
+    "@vueuse/core": "^10.9.0",
+    "nuxt": "3.15.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-latest": "^6.0.0",
-    "callback-loader": "^0.2.4",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "html-loader": "^0.4.5",
-    "node-sass": "^4.5.0",
-    "sass-loader": "^5.0.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "url-loader": "^0.5.9",
-    "vue-icons": "^2.0.0",
-    "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.5.13",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "@iconify-json/ic": "^1.2.4",
+    "@tailwindcss/vite": "^4.0.0",
+    "sass": "^1.72.0",
+    "wrangler": "^4.74.0"
   }
 }
