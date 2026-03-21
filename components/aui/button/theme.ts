@@ -41,18 +41,18 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     },
     variants: {
       primary:
-        "border-btn-primary bg-btn-primary text-btn-primary hover:bg-btn-primary-border/40 focus-visible:ring-btn-primary-border",
+        "border-btn-primary bg-btn-primary text-btn-primary-text hover:bg-btn-primary-border/40 focus-visible:ring-btn-primary-border",
       secondary:
-        "border-btn-secondary bg-btn-secondary text-btn-secondary hover:bg-btn-secondary-border/40 focus-visible:ring-btn-secondary-border",
-      info: "border-btn-primary bg-btn-primary text-btn-primary hover:bg-btn-primary-border/40 focus-visible:ring-btn-primary-border",
+        "border-btn-secondary bg-btn-secondary text-btn-secondary-text hover:bg-btn-secondary-border/40 focus-visible:ring-btn-secondary-border",
+      info: "border-btn-primary bg-btn-primary text-btn-primary-text hover:bg-btn-primary-border/40 focus-visible:ring-btn-primary-border",
       success:
-        "border-btn-success bg-btn-success text-btn-success hover:bg-btn-success-border/40 focus-visible:ring-btn-success-border",
+        "border-btn-success bg-btn-success text-btn-success-text hover:bg-btn-success-border/40 focus-visible:ring-btn-success-border",
       warning:
-        "border-btn-warning bg-btn-warning text-btn-warning hover:bg-btn-warning-border/40 focus-visible:ring-btn-warning-border",
+        "border-btn-warning bg-btn-warning text-btn-warning-text hover:bg-btn-warning-border/40 focus-visible:ring-btn-warning-border",
       error:
-        "border-btn-error bg-btn-error text-btn-error hover:bg-btn-error-border/40 focus-visible:ring-btn-error-border",
+        "border-btn-error bg-btn-error text-btn-error-text hover:bg-btn-error-border/40 focus-visible:ring-btn-error-border",
       neutral:
-        "border-btn-neutral bg-btn-neutral text-btn-neutral hover:bg-btn-neutral-border/30 focus-visible:ring-btn-neutral-border",
+        "border-btn-neutral bg-btn-neutral text-btn-neutral-text hover:bg-btn-neutral-border/30 focus-visible:ring-btn-neutral-border",
       ghost:
         "border-transparent text-main/80 hover:bg-main/10",
       link: "border-transparent text-primary-300 hover:text-primary-200 underline-offset-4 hover:underline",
@@ -70,18 +70,18 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     },
     variants: {
       primary:
-        "bg-btn-primary text-btn-primary hover:bg-primary-700",
+        "bg-btn-primary text-btn-primary-text hover:bg-primary-700",
       secondary:
-        "bg-btn-secondary text-btn-secondary hover:bg-secondary-700",
-      info: "bg-btn-primary text-btn-primary hover:bg-primary-700",
+        "bg-btn-secondary text-btn-secondary-text hover:bg-secondary-700",
+      info: "bg-btn-primary text-btn-primary-text hover:bg-primary-700",
       success:
-        "bg-btn-success text-btn-success hover:bg-success-700",
+        "bg-btn-success text-btn-success-text hover:bg-success-700",
       warning:
-        "bg-btn-warning text-btn-warning hover:bg-warning-700",
+        "bg-btn-warning text-btn-warning-text hover:bg-warning-700",
       error:
-        "bg-btn-error text-btn-error hover:bg-danger-700",
+        "bg-btn-error text-btn-error-text hover:bg-danger-700",
       neutral:
-        "bg-btn-neutral text-btn-neutral hover:bg-secondary-300",
+        "bg-btn-neutral text-btn-neutral-text hover:bg-secondary-300",
       ghost:
         "text-btn-primary hover:bg-btn-primary/10 shadow-none",
       link: "text-btn-primary hover:underline shadow-none",
@@ -99,18 +99,18 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     },
     variants: {
       primary:
-        "border-btn-primary bg-btn-primary text-btn-primary hover:bg-primary-600 hover:border-primary-600 focus:ring-primary-500",
+        "border-btn-primary bg-btn-primary text-btn-primary-text hover:bg-primary-600 hover:border-primary-600 focus:ring-primary-500",
       secondary:
-        "border-btn-secondary bg-btn-secondary text-btn-secondary hover:bg-secondary-600 hover:border-secondary-600 focus:ring-secondary-500",
-      info: "border-btn-primary bg-btn-primary text-btn-primary hover:bg-primary-600 hover:border-primary-600 focus:ring-primary-500",
+        "border-btn-secondary bg-btn-secondary text-btn-secondary-text hover:bg-secondary-600 hover:border-secondary-600 focus:ring-secondary-500",
+      info: "border-btn-primary bg-btn-primary text-btn-primary-text hover:bg-primary-600 hover:border-primary-600 focus:ring-primary-500",
       success:
-        "border-btn-success bg-btn-success text-btn-success hover:bg-success-600 hover:border-success-600 focus:ring-success-500",
+        "border-btn-success bg-btn-success text-btn-success-text hover:bg-success-600 hover:border-success-600 focus:ring-success-500",
       warning:
-        "border-btn-warning bg-btn-warning text-btn-warning hover:bg-warning-600 hover:border-warning-600 focus:ring-warning-500",
+        "border-btn-warning bg-btn-warning text-btn-warning-text hover:bg-warning-600 hover:border-warning-600 focus:ring-warning-500",
       error:
-        "border-btn-error bg-btn-error text-btn-error hover:bg-danger-600 hover:border-danger-600 focus:ring-danger-500",
+        "border-btn-error bg-btn-error text-btn-error-text hover:bg-danger-600 hover:border-danger-600 focus:ring-danger-500",
       neutral:
-        "border-btn-neutral bg-btn-neutral text-btn-neutral hover:bg-background-100 focus:ring-secondary-400",
+        "border-btn-neutral bg-btn-neutral text-btn-neutral-text hover:bg-background-100 focus:ring-secondary-400",
       ghost:
         "border-transparent text-btn-primary hover:bg-primary-100 focus:ring-primary-500",
       link: "border-transparent text-btn-primary underline hover:text-primary-700 focus:ring-primary-500",
@@ -128,18 +128,18 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     },
     variants: {
       primary:
-        "border-transparent bg-btn-primary text-btn-primary hover:bg-primary-700 focus:ring-primary-500",
+        "border-transparent bg-btn-primary text-btn-primary-text hover:bg-primary-700 focus:ring-primary-500",
       secondary:
-        "border-transparent bg-btn-secondary text-btn-secondary hover:bg-secondary-700 focus:ring-secondary-500",
-      info: "border-transparent bg-btn-primary text-btn-primary hover:bg-primary-700 focus:ring-primary-500",
+        "border-transparent bg-btn-secondary text-btn-secondary-text hover:bg-secondary-700 focus:ring-secondary-500",
+      info: "border-transparent bg-btn-primary text-btn-primary-text hover:bg-primary-700 focus:ring-primary-500",
       success:
-        "border-transparent bg-btn-success text-btn-success hover:bg-success-700 focus:ring-success-500",
+        "border-transparent bg-btn-success text-btn-success-text hover:bg-success-700 focus:ring-success-500",
       warning:
-        "border-transparent bg-btn-warning text-btn-warning hover:bg-warning-700 focus:ring-warning-500",
+        "border-transparent bg-btn-warning text-btn-warning-text hover:bg-warning-700 focus:ring-warning-500",
       error:
-        "border-transparent bg-btn-error text-btn-error hover:bg-danger-700 focus:ring-danger-500",
+        "border-transparent bg-btn-error text-btn-error-text hover:bg-danger-700 focus:ring-danger-500",
       neutral:
-        "border-btn-neutral bg-btn-neutral text-btn-neutral hover:bg-background-100 focus:ring-secondary-400",
+        "border-btn-neutral bg-btn-neutral text-btn-neutral-text hover:bg-background-100 focus:ring-secondary-400",
       ghost:
         "border-transparent text-text-900 hover:bg-background-100 focus:ring-secondary-400",
       link: "border-transparent text-btn-primary underline hover:bg-background-100 focus:ring-primary-500",

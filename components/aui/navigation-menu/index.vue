@@ -63,7 +63,7 @@
         <!-- No Submenu: Simple Link -->
         <h2 v-else>
           <button
-            :class="[getLinkClasses(item), 'flex w-full items-center justify-between text-left font-medium text-[var(--color-text-100)] focus:outline-none py-[var(--aui-spacing-3)] px-[var(--aui-spacing-4)] text-base']"
+            :class="[getLinkClasses(item), 'flex w-full items-center justify-between text-left focus:outline-none']"
             @click.stop="(e) => onClick(e, item.to)">
             <slot :name="`trigger-${item.key}`">
               {{ item.label }}
@@ -136,6 +136,8 @@ const isLinkActive = (item: NavItem): boolean => {
   return false;
 };
 
+const emit = defineEmits(["item-click"]);
+
 const getLinkClasses = (item: NavItem) => {
   if (!selectedStyle.value) return "";
   return [
@@ -146,6 +148,7 @@ const getLinkClasses = (item: NavItem) => {
 };
 
 function onClick(e: MouseEvent, to: string | ((e: MouseEvent) => void) | undefined, close?: () => void) {
+  emit("item-click", e);
   if (close) {
     close();
   }

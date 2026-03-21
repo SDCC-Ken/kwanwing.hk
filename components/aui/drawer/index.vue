@@ -1,8 +1,9 @@
 <!-- aui-drawer -->
 <template>
+  <slot name="trigger" />
   <Teleport to="body">
     <Transition name="fade">
-      <div v-if="open && selectedStyle" :class="[themeClass, selectedStyle.overlay]" @click="close" />
+      <div v-if="open && selectedStyle" :class="[themeClass, selectedStyle.overlay, 'z-40']" @click="close" />
     </Transition>
     <Transition name="slide" v-bind="transitionClasses">
       <div v-if="open && selectedStyle"

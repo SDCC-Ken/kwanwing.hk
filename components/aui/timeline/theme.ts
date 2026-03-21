@@ -68,11 +68,11 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     root: "flex",
     item: "relative flex",
     separator: "absolute",
-    dot: "relative z-10 flex items-center justify-center rounded-full border-2 bg-[var(--color-background-900)]/50 backdrop-blur-sm",
-    connector: "h-full w-full bg-[var(--color-text-100)]/20",
+    dot: "relative z-10 flex items-center justify-center rounded-full border-2 bg-[var(--color-background-50)]/50 backdrop-blur-sm",
+    connector: "h-full w-full bg-[var(--color-text-muted)]/20",
     content: "",
-    title: "font-semibold text-[var(--color-text-100)]/90",
-    description: "mt-1 text-sm text-[var(--color-text-100)]/60",
+    title: "font-semibold text-[var(--color-text)]",
+    description: "mt-1 text-sm text-[var(--color-text-muted)]",
     orientations: {
       vertical: {
         root: "flex-col",

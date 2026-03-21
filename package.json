@@ -1,6 +1,6 @@
 {
-  "name": "kwanwing.hk",
-  "description": "Kwanwing.hk Nuxt 4",
+  "name": "kwanwing.me",
+  "description": "Kwanwing.me Nuxt 4",
   "version": "1.0.0",
   "author": "ken <kenchanjp2024@gmail.com>",
   "private": true,
@@ -10,24 +10,25 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "wrangler pages dev .output/public",
-    "deploy": "bun run build && bun run generate-cv && wrangler pages deploy .output/public",
+    "deploy": "bun run build && bun run generate-cv && wrangler pages deploy dist",
     "generate-cv": "bun run scripts/generate-cv.ts",
     "watch-cv": "bun run scripts/watch-cv.ts",
     "postinstall": "nuxt prepare",
-    "cleandev": "rm -rf .nuxt && rm -rf node_modules && bun install && bun run dev"
+    "cleandev": "rm -rf .nuxt .output node_modules;bun install;bun run dev;"
   },
   "dependencies": {
-    "@floating-ui/vue": "^1.1.9",
-    "@nuxt/icon": "^1.1.0",
-    "@nuxtjs/i18n": "^8.3.1",
-    "@vueuse/core": "^10.9.0",
-    "nuxt": "3.15.0",
-    "zod": "^3.23.8"
+    "@floating-ui/vue": "^1.1.11",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxtjs/i18n": "^10.2.3",
+    "@vueuse/core": "^14.2.1",
+    "nuxt": "^4.4.2",
+    "playwright": "^1.58.2",
+    "unhead": "^2.1.12",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.2.4",
-    "@tailwindcss/vite": "^4.0.0",
-    "sass": "^1.72.0",
-    "wrangler": "^4.74.0"
+    "@tailwindcss/vite": "^4.2.2",
+    "wrangler": "^4.76.0"
   }
 }

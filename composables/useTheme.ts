@@ -25,20 +25,19 @@ export function useTheme() {
     return `${prefix}-theme-${themeValue}`;
   });
 
-  const updateBodyClass = (newTheme: string) => {
+  const updateBodyClass = (newTheme: Theme) => {
     if (typeof window === "undefined" || !document.body) return;
     
-    const themeValue = newTheme === "system" 
-      ? (preferredDark.value ? "dark" : "light") 
-      : newTheme;
-
-    const existingThemeClass = [...document.body.classList].find(
+    // Remove all existing theme classes
+    const classesToRemove = [...document.body.classList].filter(
       (cls: string) => cls.startsWith(`${prefix}-theme-`)
     );
-    if (existingThemeClass) {
-      document.body.classList.remove(existingThemeClass);
+    if (classesToRemove.length > 0) {
+      document.body.classList.remove(...classesToRemove);
     }
-    document.body.classList.add(`${prefix}-theme-${themeValue}`);
+    
+    // Add the specific theme class (light, dark, or system)
+    document.body.classList.add(`${prefix}-theme-${newTheme}`);
   };
 
   if (typeof window !== "undefined") {

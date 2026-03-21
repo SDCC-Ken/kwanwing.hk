@@ -1,24 +1,20 @@
 <template>
   <AuiDropdown placement="bottom-end" trigger-component="button" :trigger-component-props="{
-    class: 'rounded-xl w-11 h-11 p-0 flex items-center justify-center bg-background-100 hover:bg-background-200 active:bg-background-300 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/20 border border-background-200/50 shadow-sm',
+    class: 'rounded-btn w-11 h-11 p-0 flex items-center justify-center  transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/20 border border-background-200/50 rounded-lg shadow-sm',
     title: t('header.toggle_theme')
   }">
     <template #trigger>
       <Icon :name="currentIcon" class="w-5 h-5 text-primary-500 group-hover:text-primary-600" />
     </template>
     <template #content="{ close }">
-      <div class="p-2 min-w-[140px] space-y-1">
-        <button
-          v-for="option in themeOptions"
-          :key="option.value"
-          @click="handleThemeChange(option.value); close()"
-          class="w-full flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary-500/40"
+      <div class="p-2 min-w-[150px] space-y-1 bg-background-50 border border-background-200 rounded-lg shadow-xl">
+        <button v-for="option in themeOptions" :key="option.value" @click="handleThemeChange(option.value); close()"
+          class="w-full flex items-center gap-3 px-3 py-2.5 text-sm rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary-500/40"
           :class="[
             theme === option.value
-              ? 'bg-primary-600/10 text-primary-600 dark:text-primary-400 font-medium'
-              : 'hover:bg-background-400/20 text-text/70 hover:text-text',
-          ]"
-        >
+              ? 'bg-primary-500/10 text-primary-600 font-medium'
+              : 'hover:bg-background-200 text-muted-700 hover:text-muted-900',
+          ]">
           <Icon :name="option.icon" class="w-4 h-4" />
           {{ option.label }}
         </button>

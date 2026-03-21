@@ -17,12 +17,16 @@ export function useStyle() {
 
   const updateBodyClass = (newStyle: string) => {
     if (typeof window === "undefined" || !document.body) return;
-    const existingStyleClass = [...document.body.classList].find(
+    
+    // Remove all existing style classes
+    const classesToRemove = [...document.body.classList].filter(
       (cls: string) => cls.startsWith(`${prefix}-style-`)
     );
-    if (existingStyleClass) {
-      document.body.classList.remove(existingStyleClass);
+    if (classesToRemove.length > 0) {
+      document.body.classList.remove(...classesToRemove);
     }
+    
+    // Add the specific style class
     document.body.classList.add(`${prefix}-style-${newStyle}`);
   };
 

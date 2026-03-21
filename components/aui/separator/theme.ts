@@ -28,7 +28,7 @@ export type StyleConfig = z.infer<typeof StyleConfig>;
 // REFACTORED: All hardcoded colors have been replaced with CSS variables.
 export const styleMapping: Record<AuiStyleName, StyleConfig> = {
   "liquid-glass": {
-    root: "grid items-center select-none text-sm text-[var(--color-text-100)]/50",
+    root: "grid items-center select-none text-sm text-[var(--color-text)]",
     orientations: {
       horizontal: "grid-cols-[1fr_auto_1fr] gap-3 w-full",
       vertical: "grid-rows-[1fr_auto_1fr] gap-3 h-full inline-grid",
@@ -45,7 +45,7 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
       dashed: "border-dashed",
       dotted: "border-dotted",
     },
-    line: "border-[var(--color-text-100)]/20",
+    line: "border-[var(--color-text-muted)]/20",
     label: "px-3 font-medium",
   },
   material: {

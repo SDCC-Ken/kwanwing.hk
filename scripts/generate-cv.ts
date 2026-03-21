@@ -11,34 +11,50 @@ async function generatePdf() {
   const PORT = 3001;
   const isDev = process.env.NODE_ENV === 'development' || args.includes('--dev');
   
-  // Default output: .output/public/cv.pdf for build/deploy, public/cv.pdf for local dev
-  const defaultOutputDir = isDev 
-    ? path.resolve(process.cwd(), 'public')
-    : path.resolve(process.cwd(), '.output/public');
-    
+  // Default output directory: 'dist' for Cloudflare, '.output/public' for Node, 'public' for local dev
+  const getOutputDirectory = () => {
+    if (isDev) return path.resolve(process.cwd(), 'public');
+    if (fs.existsSync(path.resolve(process.cwd(), 'dist'))) return path.resolve(process.cwd(), 'dist');
+    return path.resolve(process.cwd(), '.output/public');
+  };
+  
   const OUTPUT_PATH = outputArg 
     ? path.resolve(process.cwd(), outputArg)
-    : path.join(defaultOutputDir, 'cv.pdf');
+    : path.join(getOutputDirectory(), 'cv.pdf');
 
   let server;
   let targetUrl = urlArg || `http://localhost:${PORT}/cv-print`;
 
   if (!urlArg) {
-    // Ensure output directory exists for production build
-    const serverPath = path.resolve(process.cwd(), '.output/server/index.mjs');
-    if (!fs.existsSync(serverPath)) {
-      console.error(`Error: ${serverPath} not found. Please run "bun run build" first or provide --url.`);
-      process.exit(1);
+    // Try to find the built server path
+    const builtServerPath = path.resolve(process.cwd(), '.output/server/index.mjs');
+    const cloudflareWorkerPath = path.resolve(process.cwd(), 'dist/_worker.js');
+    
+    if (fs.existsSync(builtServerPath)) {
+      console.log('🚀 Starting temporary Node.js server for PDF generation...');
+      server = spawn('node', [builtServerPath], {
+        env: { ...process.env, PORT: PORT.toString(), NODE_ENV: 'production' },
+        stdio: 'inherit'
+      });
+    } else if (fs.existsSync(cloudflareWorkerPath)) {
+      console.log('🚀 Starting Cloudflare wrangler preview for PDF generation...');
+      // Use wrangler to preview the built worker
+      server = spawn('npx', ['wrangler', 'pages', 'dev', 'dist', '--port', PORT.toString()], {
+        shell: true,
+        stdio: 'inherit'
+      });
+    } else {
+      // Fallback: Try to start dev server if build is missing, or ask user to provide --url
+      console.log('⚠️  No production build found. Attempting to use nuxt dev temporarily...');
+      server = spawn('npx', ['nuxi', 'dev', '--port', PORT.toString()], {
+        shell: true,
+        stdio: 'inherit'
+      });
     }
 
-    console.log('🚀 Starting temporary server for PDF generation...');
-    server = spawn('node', [serverPath], {
-      env: { ...process.env, PORT: PORT.toString(), NODE_ENV: 'production' },
-      stdio: 'inherit'
-    });
-
     // Give the server a few seconds to start
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    console.log('⏳ Waiting for server to initialize...');
+    await new Promise(resolve => setTimeout(resolve, 8000));
   } else {
     console.log(`🔗 Using existing server at: ${targetUrl}`);
   }

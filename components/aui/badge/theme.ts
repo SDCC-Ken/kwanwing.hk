@@ -36,18 +36,18 @@ export const styleMapping: Record<AuiStyleName, StyleConfig> = {
     },
     variants: {
       neutral:
-        "border-[var(--color-secondary-500)]/30 bg-[var(--color-secondary-500)]/10 text-[var(--color-secondary-100)]",
+        "border-[var(--color-secondary-500)]/30 bg-[var(--color-secondary-500)]/10 text-[var(--color-secondary-700)] dark:text-[var(--color-secondary-100)]",
       primary:
-        "border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/10 text-[var(--color-primary-100)]",
+        "border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/10 text-[var(--color-primary-700)] dark:text-[var(--color-primary-100)]",
       secondary:
-        "border-[var(--color-secondary-500)]/30 bg-[var(--color-secondary-500)]/10 text-[var(--color-secondary-100)]",
+        "border-[var(--color-secondary-500)]/30 bg-[var(--color-secondary-500)]/10 text-[var(--color-secondary-700)] dark:text-[var(--color-secondary-100)]",
       success:
-        "border-[var(--color-success-500)]/30 bg-[var(--color-success-500)]/10 text-[var(--color-success-100)]",
+        "border-[var(--color-success-500)]/30 bg-[var(--color-success-500)]/10 text-[var(--color-success-700)] dark:text-[var(--color-success-100)]",
       warning:
-        "border-[var(--color-warning-500)]/30 bg-[var(--color-warning-500)]/10 text-[var(--color-warning-100)]",
+        "border-[var(--color-warning-500)]/30 bg-[var(--color-warning-500)]/10 text-[var(--color-warning-700)] dark:text-[var(--color-warning-100)]",
       error:
-        "border-[var(--color-danger-500)]/30 bg-[var(--color-danger-500)]/10 text-[var(--color-danger-100)]",
-      info: "border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/10 text-[var(--color-primary-100)]",
+        "border-[var(--color-danger-500)]/30 bg-[var(--color-danger-500)]/10 text-[var(--color-danger-700)] dark:text-[var(--color-danger-100)]",
+      info: "border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/10 text-[var(--color-primary-700)] dark:text-[var(--color-primary-100)]",
     },
   },
   material: {
