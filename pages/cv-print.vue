@@ -47,7 +47,7 @@
             <AuiSeparator label="Experience" style-name="material"
               class="mb-8 font-black uppercase tracking-widest text-xs" />
 
-            <AuiTimeline :items="workingItems" style-name="material" size="sm" class="mt-4">
+            <AuiTimeline :items="workingItems" style-name="material" size="sm" class="mt-4 cv-timeline">
               <template #title="{ item }">
                 <div class="font-bold text-lg text-black leading-tight">{{ item.role }}</div>
                 <div class="font-black text-sm text-primary-700 uppercase tracking-tight">{{ item.company }}</div>
@@ -56,6 +56,12 @@
               <template #description="{ item }">
                 <ul class="item-list mt-2">
                   <li v-for="desc in item.description" :key="desc">{{ desc }}</li>
+                  <li v-if="showSalary && item.currentSalary" class="mt-2 list-none!">
+                    <div
+                      class="inline-flex items-center text-[10px] font-black uppercase text-primary-700 bg-primary-50 px-2 py-0.5 rounded border border-primary-200">
+                      Current Salary: {{ item.currentSalary }}
+                    </div>
+                  </li>
                 </ul>
               </template>
             </AuiTimeline>
@@ -65,7 +71,7 @@
             <AuiSeparator label="Academic History" style-name="material"
               class="mb-8 font-black uppercase tracking-widest text-xs" />
 
-            <AuiTimeline :items="educationItems" style-name="material" size="sm" class="mt-4">
+            <AuiTimeline :items="educationItems" style-name="material" size="sm" class="mt-4 cv-timeline">
               <template #title="{ item }">
                 <div class="font-bold text-lg text-black leading-tight">{{ item.role }}</div>
                 <div class="font-black text-sm text-gray-800 uppercase tracking-tight">{{ item.company }}</div>
@@ -98,6 +104,27 @@
               </div>
             </div>
           </section>
+
+          <section v-if="showSalary" class="section">
+            <AuiSeparator label="Salary Expectations" style-name="material"
+              class="mb-8 font-black uppercase tracking-widest text-xs" />
+            <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+              <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Expected Salary</div>
+              <div class="text-xl font-black text-black">HKD 42,000</div>
+              <div class="text-[10px] font-bold text-gray-400 mt-2 italic">Negotiable based on package and benefits.
+              </div>
+              <div class="mt-3 pt-3 border-t border-gray-200">
+                <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Availability</div>
+                <div class="text-sm font-black text-black">Available from May 2026</div>
+              </div>
+            </div>
+          </section>
+          <section v-else class="section">
+            <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+              <div class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Availability</div>
+              <div class="text-sm font-black text-black">Available from May 2026</div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
@@ -105,25 +132,32 @@
 </template>
 
 <script setup>
+const route = useRoute()
+const showSalary = computed(() => route.query.salary === 'true')
+
 // Define shared data (could be moved to a composable in a real app)
 const workingItems = [
   {
     company: 'SkyDreamCity Team',
     period: 'Apr 2025 - NOW',
     role: 'Chief Software Engineer',
+    currentSalary: 'Based on the project',
     description: [
-      'Architected PWA applications and SaaS platforms including YourAIApps.Online.',
-      'Engineered AI-driven web automation agents utilizing Playwright.',
-      'Building AI software warehouses for SMEs.'
+      'Architected PWA applications and SaaS platforms, including YourAIApps.Online, to build AI-driven software warehouses for SMEs.',
+      'Developed an internal Retrieval-Augmented Generation (RAG) AI chat assistant, enabling users to securely query and extract insights from uploaded enterprise documents.',
+      'Engineered AI-driven web automation agents utilizing Playwright and built intelligent internal micro-systems to streamline business operations.',
+      'Established a high-performance, modern full-stack architecture heavily utilizing the TypeScript ecosystem, specifically Node.js (Fastify) for backend services and Vue.js (Nuxt 3 SSR) for frontends.'
     ]
   },
   {
     company: 'Swivel Software',
     period: 'Jul 2022 - Apr 2025',
-    role: 'Head of IT',
+    role: 'Head of IT (Team Head Under 360 Team)',
+    currentSalary: 'HKD35,000 * 13 (exclude MPF)',
     description: [
-      'Led development of scalable B2B/B2C logistics SaaS platforms.',
-      'Managed deployment pipelines and system reliability.'
+      'Spearheaded the development of "360", a flagship B2B Collaborative Portal designed to deliver end-to-end operational visibility and data transparency for logistics management and enterprise clients.',
+      'Led the engineering team in modernizing legacy logistics platforms, successfully transitioning them into scalable architectures driven by TypeScript, Node.js, and Vue.js.',
+      'Managed deployment pipelines, CI/CD processes, and system reliability to ensure uninterrupted service for global logistics operations.'
     ]
   },
   {
@@ -131,7 +165,8 @@ const workingItems = [
     period: 'Mar 2018 - Jun 2022',
     role: 'Software Engineer',
     description: [
-      'Developed core logistics systems using TypeScript and Node.js.'
+      'Developed and optimized core backend microservices and databases for high-traffic logistics management systems using TypeScript and Node.js.',
+      'Collaborated on architectural decisions to improve system performance, scalability, and data processing efficiency.'
     ]
   },
   {
@@ -139,8 +174,8 @@ const workingItems = [
     period: 'Jun 2015 - Feb 2018',
     role: 'Programmer / Intern',
     description: [
-      'Developed web applications and CMS systems.',
-      'Gained foundational experience in PHP and full-stack development.'
+      'Developed and maintained responsive web applications and customized CMS systems tailored for client needs.',
+      'Gained foundational full-stack experience in PHP frameworks and frontend technologies.'
     ]
   }
 ]
@@ -189,6 +224,32 @@ definePageMeta({
 @page {
   size: A4;
   margin: 1cm;
+}
+
+/* ── Page-break rules ────────────────────────────── */
+
+/* Each timeline item (job / degree) must not split across pages */
+.cv-timeline>div {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Skill groups in the right column must not split */
+.skill-group {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Section separator (heading line) must stick to the content below it */
+.section>*:first-child {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* Availability / salary boxes must not split */
+.section>div[class*="bg-gray"] {
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 body {

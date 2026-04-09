@@ -7,13 +7,13 @@
       <Icon :name="currentIcon" class="w-5 h-5 text-primary-500 group-hover:text-primary-600" />
     </template>
     <template #content="{ close }">
-      <div class="p-2 min-w-[150px] space-y-1 bg-background-50 border border-background-200 rounded-lg shadow-xl">
+      <div class="p-2 min-w-[150px] space-y-1 bg-background border border-background-200 rounded-lg shadow-xl">
         <button v-for="option in themeOptions" :key="option.value" @click="handleThemeChange(option.value); close()"
           class="w-full flex items-center gap-3 px-3 py-2.5 text-sm rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary-500/40"
           :class="[
             theme === option.value
-              ? 'bg-primary-500/10 text-primary-600 font-medium'
-              : 'hover:bg-background-200 text-muted-700 hover:text-muted-900',
+              ? 'bg-primary-500/10 text-primary font-semibold'
+              : 'hover:bg-background-200/60 text-text/80 hover:text-text',
           ]">
           <Icon :name="option.icon" class="w-4 h-4" />
           {{ option.label }}

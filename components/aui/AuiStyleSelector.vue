@@ -8,18 +8,18 @@
       <span class="text-sm font-bold text-primary-500">{{ currentStyleLabel }}</span>
     </template>
     <template #content="{ close }">
-      <div class="p-2 min-w-[170px] space-y-1 bg-background-50 border border-background-200 rounded-lg shadow-xl">
-        <div class="px-3 py-1.5 text-[10px] font-bold text-muted-500 uppercase tracking-wider">
+      <div class="p-2 min-w-[170px] space-y-1 bg-background border border-background-200 rounded-lg shadow-xl">
+        <div class="px-3 py-1.5 text-[10px] font-bold text-text/40 uppercase tracking-wider">
           UI Design System
         </div>
         <button v-for="option in styleOptions" :key="option.value" @click="currentStyle = option.value; close()"
           class="w-full flex items-center gap-3 px-3 py-2.5 text-sm rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary-500/40"
           :class="[
             currentStyle === option.value
-              ? 'bg-primary-500/10 text-primary-600 font-medium'
-              : 'hover:bg-background-200 text-muted-700 hover:text-muted-900',
+              ? 'bg-primary-500/10 text-primary font-semibold'
+              : 'hover:bg-background-200/60 text-text/80 hover:text-text',
           ]">
-          <div class="w-2.5 h-2.5 rounded-full ring-2 ring-background-50" :class="option.color"></div>
+          <div class="w-2.5 h-2.5 rounded-full ring-2 ring-background" :class="option.color"></div>
           {{ option.label }}
         </button>
       </div>

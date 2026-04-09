@@ -26,18 +26,18 @@ export function useTheme() {
   });
 
   const updateBodyClass = (newTheme: Theme) => {
-    if (typeof window === "undefined" || !document.body) return;
+    if (typeof window === "undefined" || !document.documentElement) return;
     
     // Remove all existing theme classes
-    const classesToRemove = [...document.body.classList].filter(
+    const classesToRemove = [...document.documentElement.classList].filter(
       (cls: string) => cls.startsWith(`${prefix}-theme-`)
     );
     if (classesToRemove.length > 0) {
-      document.body.classList.remove(...classesToRemove);
+      document.documentElement.classList.remove(...classesToRemove);
     }
     
     // Add the specific theme class (light, dark, or system)
-    document.body.classList.add(`${prefix}-theme-${newTheme}`);
+    document.documentElement.classList.add(`${prefix}-theme-${newTheme}`);
   };
 
   if (typeof window !== "undefined") {

@@ -234,6 +234,11 @@
                     </div>
                   </AuiSeparator>
                   <AuiTimeline :items="workingItems" style-name="liquid-glass" size="lg">
+                    <template #dot="{ index }">
+                      <div class="shrink-0 aspect-square w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 border-2 border-primary/40 text-primary font-black text-sm">
+                        {{ workingItems.length - index }}
+                      </div>
+                    </template>
                     <template #title="{ item }">
                       <div class="flex flex-col md:flex-row md:items-center gap-2">
                         <span class="font-black text-xl text-text leading-none">{{ item.role }}</span>
@@ -265,6 +270,11 @@
                     </div>
                   </AuiSeparator>
                   <AuiTimeline :items="educationItems" style-name="liquid-glass" size="lg">
+                    <template #dot="{ index }">
+                      <div class="shrink-0 aspect-square w-10 h-10 rounded-full flex items-center justify-center bg-secondary/10 border-2 border-secondary/40 text-secondary font-black text-sm">
+                        {{ educationItems.length - index }}
+                      </div>
+                    </template>
                     <template #title="{ item }">
                       <div class="flex flex-col md:flex-row md:items-center gap-2">
                         <span class="font-black text-xl text-text leading-none">{{ item.role }}</span>
@@ -456,7 +466,8 @@
                     </div>
                     <div class="space-y-2">
                       <span class="text-primary font-black text-xs uppercase tracking-widest">Website</span>
-                      <p class="text-xl font-bold text-text underline decoration-primary/30 hover:text-primary transition-colors">
+                      <p
+                        class="text-xl font-bold text-text underline decoration-primary/30 hover:text-primary transition-colors">
                         <a href="https://kwanwing.me" target="_blank">kwanwing.me</a>
                       </p>
                     </div>
@@ -591,17 +602,7 @@ const program = [
   {
     title: 'Swivel 360',
     content: [{ label: 'Type', text: 'Web Application (TypeScript)' }, { label: "Company", text: "Swivel Software" }],
-    actions: [{ title: 'Preview', url: 'showcase/hurry_waiter/index.html' }]
-  },
-  {
-    title: 'Hurry Waiter',
-    content: [{ label: 'Type', text: 'Web Application (JavaScript)' }],
     actions: [{ title: 'Preview', url: 'https://www.swivelsoftware.com/swivel-360' }]
-  },
-  {
-    title: 'Hurry Waiter',
-    content: [{ label: 'Type', text: 'Web Application (JavaScript)' }],
-    actions: [{ title: 'Preview', url: 'https://github.com/SDCC-Ken/hurry_waiter' }]
   },
   {
     title: 'Hurry Waiter',
@@ -693,18 +694,20 @@ const workingItems = [
     period: 'Apr 2025 - NOW',
     role: 'Chief Software Engineer',
     description: [
-      'Architected PWA applications and SaaS platforms including YourAIApps.Online.',
-      'Engineered AI-driven web automation agents utilizing Playwright.',
-      'Building AI software warehouses for SMEs.'
+      'Architected PWA applications and SaaS platforms, including YourAIApps.Online, to build AI-driven software warehouses for SMEs.',
+      'Developed an internal Retrieval-Augmented Generation (RAG) AI chat assistant, enabling users to securely query and extract insights from uploaded enterprise documents.',
+      'Engineered AI-driven web automation agents utilizing Playwright and built intelligent internal micro-systems to streamline business operations.',
+      'Established a high-performance, modern full-stack architecture heavily utilizing the TypeScript ecosystem, specifically Node.js (Fastify) for backend services and Vue.js (Nuxt 3 SSR) for frontends.'
     ]
   },
   {
     company: 'Swivel Software',
     period: 'Jul 2022 - Apr 2025',
-    role: 'Head of IT',
+    role: 'Head of IT (Team Head Under 360 Team)',
     description: [
-      'Led development of scalable B2B/B2C logistics SaaS platforms.',
-      'Managed deployment pipelines and system reliability.'
+      'Spearheaded the development of "360", a flagship B2B Collaborative Portal designed to deliver end-to-end operational visibility and data transparency for logistics management and enterprise clients.',
+      'Led the engineering team in modernizing legacy logistics platforms, successfully transitioning them into scalable architectures driven by TypeScript, Node.js, and Vue.js.',
+      'Managed deployment pipelines, CI/CD processes, and system reliability to ensure uninterrupted service for global logistics operations.'
     ]
   },
   {
@@ -712,7 +715,8 @@ const workingItems = [
     period: 'Mar 2018 - Jun 2022',
     role: 'Software Engineer',
     description: [
-      'Developed core logistics systems using TypeScript and Node.js.'
+      'Developed and optimized core backend microservices and databases for high-traffic logistics management systems using TypeScript and Node.js.',
+      'Collaborated on architectural decisions to improve system performance, scalability, and data processing efficiency.'
     ]
   },
   {
@@ -720,12 +724,11 @@ const workingItems = [
     period: 'Jun 2015 - Feb 2018',
     role: 'Programmer / Intern',
     description: [
-      'Developed web applications and CMS systems.',
-      'Gained foundational experience in PHP and full-stack development.'
+      'Developed and maintained responsive web applications and customized CMS systems tailored for client needs.',
+      'Gained foundational full-stack experience in PHP frameworks and frontend technologies.'
     ]
   }
 ]
-
 const educationItems = [
   {
     company: 'PolyU (MSC)',

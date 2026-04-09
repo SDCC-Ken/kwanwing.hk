@@ -16,18 +16,18 @@ export function useStyle() {
   );
 
   const updateBodyClass = (newStyle: string) => {
-    if (typeof window === "undefined" || !document.body) return;
+    if (typeof window === "undefined" || !document.documentElement) return;
     
     // Remove all existing style classes
-    const classesToRemove = [...document.body.classList].filter(
+    const classesToRemove = [...document.documentElement.classList].filter(
       (cls: string) => cls.startsWith(`${prefix}-style-`)
     );
     if (classesToRemove.length > 0) {
-      document.body.classList.remove(...classesToRemove);
+      document.documentElement.classList.remove(...classesToRemove);
     }
     
     // Add the specific style class
-    document.body.classList.add(`${prefix}-style-${newStyle}`);
+    document.documentElement.classList.add(`${prefix}-style-${newStyle}`);
   };
 
   // Apply style to body only on client side

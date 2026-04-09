@@ -12,6 +12,7 @@
         selectedStyle.dot,
         selectedStyle.sizes[size].dot,
         selectedStyle.variants[variant],
+        'shrink-0 self-start',
       ]">
         <slot name="dot" :item="item" :index="index">
           <span class="h-2.5 w-2.5 rounded-full bg-[var(--color-secondary-400)]" />

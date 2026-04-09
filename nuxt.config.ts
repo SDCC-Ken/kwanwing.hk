@@ -28,6 +28,25 @@ export default defineNuxtConfig({
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "description", content: "Kwanwing.me Portfolio" },
       ],
+      script: [
+        {
+          // Blocking script to apply theme class before first paint, preventing FOUC in dark mode.
+          // IMPORTANT: Must target document.documentElement (<html>), NOT document.body,
+          // because <body> does not exist yet when <head> scripts execute.
+          innerHTML: `(function(){
+  try {
+    var theme = localStorage.getItem('aui-theme') || 'system';
+    var style = localStorage.getItem('aui-style') || 'material';
+    document.documentElement.classList.add('aui-theme-' + theme);
+    document.documentElement.classList.add('aui-style-' + style);
+  } catch(e) {
+    document.documentElement.classList.add('aui-theme-system');
+    document.documentElement.classList.add('aui-style-material');
+  }
+})();`,
+          type: "text/javascript",
+        },
+      ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {

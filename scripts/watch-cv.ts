@@ -27,8 +27,8 @@ async function runGenerate() {
       "run",
       "scripts/generate-cv.ts",
       "--dev",
-      "--url=http://localhost:3000/cv-print",
-      "--output=public/cv.pdf",
+      "--port=3000",
+      "--existing-server",
       "--no-exit",
     ],
     {
