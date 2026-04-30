@@ -80,6 +80,8 @@
                   and you can call me
                   <span class="text-secondary font-black px-2 py-0.5 bg-secondary/10 rounded-lg">Ken</span>.
                   I'm a developer and researcher focused on building AI systems that actually matter.
+                  <br /><br />
+                  I am a Senior Full-Stack Engineer and Tech Lead with a deep passion for building scalable, production-ready web applications. While I enjoy architecting AI-driven automation systems, my true strength lies in writing clean, self-healing code and fostering a stable, efficient engineering culture.
                 </p>
 
                 <div class="flex flex-col gap-4">
@@ -213,10 +215,7 @@
                 </div>
                 <div class="border-t border-white/10 pt-10">
                   <p class="text-xl md:text-2xl leading-relaxed text-text/80 font-medium">
-                    Chief Software Engineer and technical founder specializing in full-stack TypeScript development.
-                    Focused
-                    on AI automation, leveraging Playwright and local LLM orchestration to deliver intelligent,
-                    production-ready web applications.
+                    Senior Full-Stack Engineer & Technical Lead specializing in high-performance TypeScript ecosystems (Node.js & Vue.js). With a proven track record of architecting scalable SaaS platforms and integrating AI automation (Playwright, local LLMs), I am looking to bring my 0-to-1 system design experience and hands-on coding expertise to a forward-thinking, remote-friendly engineering team.
                   </p>
                 </div>
               </div>
@@ -694,20 +693,21 @@ const workingItems = [
     period: 'Apr 2025 - NOW',
     role: 'Chief Software Engineer',
     description: [
-      'Architected PWA applications and SaaS platforms, including YourAIApps.Online, to build AI-driven software warehouses for SMEs.',
-      'Developed an internal Retrieval-Augmented Generation (RAG) AI chat assistant, enabling users to securely query and extract insights from uploaded enterprise documents.',
-      'Engineered AI-driven web automation agents utilizing Playwright and built intelligent internal micro-systems to streamline business operations.',
-      'Established a high-performance, modern full-stack architecture heavily utilizing the TypeScript ecosystem, specifically Node.js (Fastify) for backend services and Vue.js (Nuxt 3 SSR) for frontends.'
+      'Architected enterprise-grade AI-driven SaaS platforms and PWA applications for SMEs, leading the core technical strategy and end-to-end development as the primary technology partner.',
+      'Spearheaded the development of a secure Retrieval-Augmented Generation (RAG) system and AI chat assistant, integrating LLMs to empower users to safely query and extract intelligent insights from private enterprise documents.',
+      'Engineered autonomous AI web automation agents utilizing Playwright and LLM orchestration, building intelligent internal micro-systems to streamline and automate complex business operations.',
+      'Established a high-performance full-stack architecture utilizing the TypeScript ecosystem, specifically Node.js (Fastify) for backend services and Vue.js (Nuxt 3 SSR) for frontends.',
+      'Designed and implemented robust, self-healing code architectures using Fastify and Prisma, significantly reducing maintenance overhead and ensuring high system reliability.'
     ]
   },
   {
     company: 'Swivel Software',
     period: 'Jul 2022 - Apr 2025',
-    role: 'Head of IT (Team Head Under 360 Team)',
+    role: 'Head of IT / Hands-on Tech Lead (360 Team)',
     description: [
-      'Spearheaded the development of "360", a flagship B2B Collaborative Portal designed to deliver end-to-end operational visibility and data transparency for logistics management and enterprise clients.',
-      'Led the engineering team in modernizing legacy logistics platforms, successfully transitioning them into scalable architectures driven by TypeScript, Node.js, and Vue.js.',
-      'Managed deployment pipelines, CI/CD processes, and system reliability to ensure uninterrupted service for global logistics operations.'
+      'Acted as a "player-coach" leading a compact agile team of 5 engineers to develop "360", a flagship B2B Collaborative Portal for enterprise clients.',
+      'Hands-on architected and coded core system components, successfully transitioning legacy logistics platforms into scalable TypeScript, Node.js, and Vue.js architectures.',
+      'Mentored developers and established best practices, while managing deployment pipelines and system reliability for global operations.'
     ]
   },
   {
@@ -716,7 +716,7 @@ const workingItems = [
     role: 'Software Engineer',
     description: [
       'Developed and optimized core backend microservices and databases for high-traffic logistics management systems using TypeScript and Node.js.',
-      'Collaborated on architectural decisions to improve system performance, scalability, and data processing efficiency.'
+      'Collaborated closely with senior management on architectural decisions, gradually taking on leadership responsibilities to improve system performance, scalability, and data processing efficiency.'
     ]
   },
   {

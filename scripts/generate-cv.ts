@@ -25,8 +25,8 @@ async function generatePdfs() {
   const targets = urlArg 
     ? [{ url: urlArg, output: outputArg || 'cv.pdf' }]
     : [
-        { url: `http://localhost:${PORT}/cv-print`, output: 'cv.pdf' },
-        { url: `http://localhost:${PORT}/cv-print?salary=true`, output: 'cv-salary.pdf' }
+        { url: `http://127.0.0.1:${PORT}/cv-print`, output: 'cv.pdf' },
+        { url: `http://127.0.0.1:${PORT}/cv-print?salary=true`, output: 'cv-salary.pdf' }
       ];
 
   let server;
@@ -43,20 +43,38 @@ async function generatePdfs() {
       });
     } else if (fs.existsSync(cloudflareWorkerPath)) {
       console.log('🚀 Starting Cloudflare wrangler preview...');
-      server = spawn('npx', ['wrangler', 'pages', 'dev', 'dist', '--port', PORT.toString()], {
+      server = spawn('npx', ['wrangler', 'pages', 'dev', 'dist', '--port', PORT.toString(), '--ip', '127.0.0.1'], {
         shell: true,
         stdio: 'inherit'
       });
     } else {
       console.log('⚠️  No production build found. Using nuxt dev...');
-      server = spawn('npx', ['nuxi', 'dev', '--port', PORT.toString()], {
+      server = spawn('npx', ['nuxi', 'dev', '--port', PORT.toString(), '--host', '127.0.0.1'], {
         shell: true,
         stdio: 'inherit'
       });
     }
 
-    console.log('⏳ Waiting for server to initialize...');
-    await new Promise(resolve => setTimeout(resolve, 8000));
+    console.log('⏳ Waiting for server to be ready...');
+    let ready = false;
+    for (let i = 0; i < 20; i++) {
+      try {
+        const res = await fetch(`http://127.0.0.1:${PORT}/`);
+        if (res.status < 500) {
+          ready = true;
+          break;
+        }
+      } catch (e) {
+        // Continue waiting
+      }
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    if (!ready) {
+      console.warn('⚠️ Server might not be ready, but proceeding anyway...');
+    } else {
+      console.log('✅ Server is ready!');
+    }
   }
 
   try {
@@ -77,7 +95,7 @@ async function generatePdfs() {
       await page.setViewportSize({ width: 794, height: 1123 });
       await page.emulateMedia({ media: 'print' });
 
-      await page.goto(target.url, { waitUntil: 'networkidle' });
+      await page.goto(target.url, { waitUntil: 'networkidle', timeout: 60000 });
       await page.evaluateHandle(() => document.fonts.ready);
       await new Promise(resolve => setTimeout(resolve, 2000));
 
